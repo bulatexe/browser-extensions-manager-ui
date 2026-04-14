@@ -1,0 +1,323 @@
+:root {
+  --bg: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+  --headerBg: hsl(200, 60%, 99%);
+  --logoPathCl: hsl(226, 25%, 17%);
+  --titleCl: hsl(226, 25%, 17%);
+  --cardBg: hsl(200, 60%, 99%);
+  --cardBorderCl: hsl(0, 0%, 78%);
+  --extensionTitleCl: hsl(226, 25%, 17%);
+  --extensionDescCl: hsl(226, 25%, 17%);
+  --labelBg: hsl(200, 60%, 99%);
+  --labelCl: hsl(227, 75%, 14%);
+  --labelActiveBg: hsl(3, 71%, 56%);
+  --labelActiveCl: hsl(0, 0%, 93%);
+  --labelFocusCl: hsl(3, 77%, 44%);
+  --labelHoverCl: hsl(0, 0%, 93%);
+  --btnThemeBg: hsl(0, 0%, 93%);
+  --btnThemeFocusCl: hsl(3, 71%, 56%);
+  --btnThemeHoverCl: hsl(0, 0%, 78%);
+  --btnSwitchBg: hsl(0, 0%, 78%);
+  --btnSwitchAfterBg: hsl(0, 0%, 93%);
+  --btnSwitchBgActive: hsl(3, 77%, 44%);
+  --btnSwitchBgActiveHover: hsl(3, 86%, 64%);
+  --btnSwitchFocusCl: hsl(3, 77%, 44%);
+  --btnRemoveCl: hsl(226, 25%, 17%);
+  --btnRemoveBorderCl: hsl(0, 0%, 78%);
+  --btnRemoveFocusCl: hsl(3, 77%, 44%);
+  --btnRemoveHoverBgCl: hsl(3, 77%, 44%);
+  --btnRemoveHoverCl: hsl(200, 60%, 99%);
+}
+
+.theme-dark {
+  --bg: linear-gradient(180deg, #040918 0%, #091540 100%);
+  --headerBg: hsl(226, 25%, 17%);
+  --titleCl: hsl(200, 60%, 99%);
+  --logoPathCl: hsl(200, 60%, 99%);
+  --btnThemeBg: hsl(225, 23%, 24%);
+  --btnThemeHoverCl: hsl(226, 11%, 37%);
+  --cardBg: hsl(226, 25%, 17%);
+  --cardBorderCl: hsl(226, 11%, 37%);
+  --labelBg: hsl(226, 25%, 17%);
+  --labelCl: hsl(200, 60%, 99%);
+  --labelActiveCl: hsl(226, 25%, 17%);
+  --labelHoverCl: hsl(225, 23%, 24%);
+  --extensionTitleCl: hsl(200, 60%, 99%);
+  --extensionDescCl: hsl(200, 60%, 99%);
+  --btnRemoveBorderCl: hsl(226, 11%, 37%);
+  --btnRemoveCl: hsl(200, 60%, 99%);
+  --btnRemoveHoverBgCl: hsl(3, 71%, 56%);
+  --btnRemoveHoverCl: hsl(225, 23%, 24%);
+  --btnSwitchBg: hsl(226, 11%, 37%);
+  --btnSwitchBgActive: hsl(3, 86%, 64%);
+  --btnSwitchBgActiveHover: hsl(3, 71%, 56%);
+}
+
+.dark-icon {
+  display: none;
+}
+
+.theme-dark .dark-icon {
+  display: inline-block;
+}
+
+.theme-dark .light-icon {
+  display: none;
+}
+
+@font-face {
+  font-family: "NotoSans";
+  src: url("assets/fonts/NotoSans-VariableFont_wdth\,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 144rem;
+  padding: 0 2rem;
+  font-size: 1.6rem;
+  background: var(--bg);
+  font-family: "NotoSans", sans-serif;
+  height: calc(100vh - 4rem);
+  min-width: 32rem;
+}
+
+p {
+  margin: 0;
+}
+
+header {
+  margin-top: 4rem;
+}
+
+main {
+  margin-top: 4rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 0.1rem;
+  height: 0.1rem;
+  padding: 0;
+  margin: -0.1rem;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.jc-sp-bt {
+  justify-content: space-between;
+}
+
+.flex-center-y {
+  align-items: center;
+}
+
+.flex-start-y {
+  align-items: flex-start;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--headerBg);
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+}
+
+.logo svg .text path {
+  fill: var(--logoPathCl);
+}
+
+.title {
+  color: var(--titleCl);
+}
+
+.btn-switch-theme {
+  border: none;
+  background-color: var(--btnThemeBg);
+  padding: 0.8rem;
+  border-radius: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-switch-theme:hover {
+  background-color: var(--btnThemeHoverCl);
+}
+
+.btn-switch-theme:focus {
+  outline: 0.2rem solid var(--btnThemeFocusCl);
+}
+
+.controls label {
+  cursor: pointer;
+  margin-right: 1rem;
+  border-radius: 2rem;
+  padding: 1rem 1.6rem;
+  background-color: var(--labelBg);
+  color: var(--labelCl);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.controls label:hover {
+  background-color: var(--labelHoverCl);
+}
+
+.controls input:checked + label {
+  background-color: var(--labelActiveBg);
+  color: var(--labelActiveCl);
+}
+
+.controls input:focus + label {
+  outline: 0.2rem solid var(--labelFocusCl);
+  outline-offset: 0.1rem;
+}
+
+.controls label:last-of-type {
+  margin-right: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 1rem;
+  column-gap: 1rem;
+  margin-top: 1rem;
+}
+
+.extension {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-radius: 2rem;
+  background-color: var(--cardBg);
+  border: 0.1rem solid var(--cardBorderCl);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.extension header {
+  margin-top: 0;
+  margin-bottom: 4rem;
+}
+
+.extension-info {
+  margin-left: 1.5rem;
+}
+
+.extension-info h2{
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--extensionTitleCl)
+}
+
+.extension-info p {
+  color: var(--extensionDescCl)
+}
+
+.extension header img {
+  width: 6rem;
+  height: 6rem;
+}
+
+.extension footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-switch {
+  position: relative;
+  background-color: var(--btnSwitchBg);
+  border: none;
+  width: 4rem;
+  height: 2rem;
+  border-radius: 3rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-switch::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 3rem;
+  background-color: var(--btnSwitchAfterBg);
+  transition: transform 0.3s ease;
+  transform: translateY(-50%) translateX(-1.8rem); 
+}
+
+.btn-switch.is-active {
+  background-color: var(--btnSwitchBgActive);
+}
+
+.btn-switch.is-active:hover {
+  background-color: var(--btnSwitchBgActiveHover);
+}
+
+.btn-switch.is-active::after {
+  transform: translateY(-50%) translateX(0.1rem);
+}
+
+.btn-switch:focus {
+  outline: 0.2rem solid var(--btnSwitchFocusCl);
+  outline-offset: 0.1rem;
+}
+
+.btn-remove {
+  background-color: transparent;
+  border: 0.1rem solid var(--btnRemoveBorderCl);
+  padding: 0.8rem 1.2rem;
+  border-radius: 2rem;
+  color: var(--btnRemoveCl);
+  transition: 
+    background-color 0.3s ease, 
+    color 0.3s ease, 
+    border-color 0.3s ease;
+}
+
+.btn-remove:hover {
+  background-color: var(--btnRemoveHoverBgCl);
+  color: var(--btnRemoveHoverCl)
+}
+
+.btn-remove:focus {
+  outline: 0.2rem solid var(--btnRemoveFocusCl);
+}
+
+@media (max-width: 62em) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 48em) {
+  main {
+    margin-top: 2rem;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 4rem;
+  }
+
+  .column-mobile {
+    flex-direction: column;
+  }
+}
